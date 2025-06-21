@@ -234,3 +234,13 @@ export const insertContractSchema = createInsertSchema(contracts).omit({
   id: true,
   criadoEm: true,
 });
+
+// Types for new tables
+export type Lead = typeof leads.$inferSelect;
+export type InsertLead = z.infer<typeof insertLeadSchema>;
+
+export type Opportunity = typeof opportunities.$inferSelect;
+export type InsertOpportunity = z.infer<typeof insertOpportunitySchema>;
+
+export type Contract = typeof contracts.$inferSelect;
+export type InsertContract = z.infer<typeof insertContractSchema>;
